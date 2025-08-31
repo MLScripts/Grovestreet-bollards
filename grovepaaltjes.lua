@@ -63,13 +63,6 @@ CreateThread(function()
   SetModelAsNoLongerNeeded(BOLLARD_HASH)
 end)
 
-RegisterCommand('clearpaaltjes', function()
-  for _, ent in ipairs(spawned) do
-    if DoesEntityExist(ent) then DeleteObject(ent) end
-  end
-  spawned = {}
-end)
-
 AddEventHandler('onResourceStop', function(res)
   if res == GetCurrentResourceName() then
     for _, ent in ipairs(spawned) do
